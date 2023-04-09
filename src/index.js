@@ -4,6 +4,30 @@ function displayTemperature(response) {
     response.data.main.temp
   );
 
+  function formatDate(timestamp){
+    let date = new Date(timestamp)
+    let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thrsday",
+  "Friday",
+  "Saturday",
+  
+];
+let day = days[date.getDay()];
+let hour = date.getHours();
+if (hour < 10) {
+  hour = `0${hour}`;
+}
+let min = date.getMinutes();
+if (min < 10) {
+  min = `0${min}`;
+  }
+return`${day} ${hour}:${min}`
+
+
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
@@ -12,6 +36,8 @@ function displayTemperature(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+
+  document.querySelector("#date").innerHTML = formatDate;
 }
 
 let city = "Lisbon";
