@@ -34,7 +34,7 @@ li {
 .weather-app {
   padding: 20px;
   border: 1px solid #dadde1;
-  border-radius: 5px;
+  border-radius: 7px;
 }
 
 .overView {
@@ -42,7 +42,22 @@ li {
 }
 
 .weather-temperature img {
-  margin-right: 20px;
+  position: relative;
+  top: -26px;
+  margin-right: 2px;
   width: 64px;
   height: 64px;
+}
+
+.weather-temperature strong {
+  color: rgb(33, 33, 33);
+  line-break: 1;
+  font-size: 64px;
+  font-weight: 400;
+}
+
+.weather-temperature .units {
+  position: relative;
+  top: -34px;
+  font-size: 16px;
 }
