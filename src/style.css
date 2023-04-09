@@ -70,3 +70,13 @@ li:first-letter {
   padding-top: 0px;
   padding-left: 265px;
 }
+
+.weather-temperature .active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+  text-decoration: none;
+}
+
+.weather-temperature .active :hover {
+  text-decoration: none;
+}

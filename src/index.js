@@ -1,7 +1,7 @@
 function displayTemperature(response) {
-  document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  celsiusTemperature = response.data.main.temp;
+  document.querySelector("#temperature").innerHTML =
+    Math.round(celsiusTemperature);
 
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#description").innerHTML =
@@ -53,7 +53,7 @@ function search(city) {
   axios.get(`${apiUrl}&appid=${apiKey}`).then(displayTemperature);
 }
 
-search("Lisbon");
+let celsiusTemperature = null;
 
 document
   .querySelector("#search-form")
@@ -62,3 +62,26 @@ document
     let cityInputElement = document.querySelector("#city-input");
     search(cityInputElement.value);
   });
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+
+fahrenheitLink.addEventListener("click", function changeToFahrenheit(event) {
+  event.preventDefault();
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let farenheitDegree = (celsiusTemperature * 9) / 5 + 32;
+  document.querySelector("#temperature").innerHTML =
+    Math.round(farenheitDegree);
+});
+
+let celsiusLink = document.querySelector("#celsius-link");
+
+celsiusLink.addEventListener("click", function changeToCelsius(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  document.querySelector("#temperature").innerHTML =
+    Math.round(celsiusTemperature);
+});
+
+search("Lisbon");

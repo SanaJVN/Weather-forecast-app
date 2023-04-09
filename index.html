@@ -11,8 +11,8 @@
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="src/style.css" />
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
     <div class="container">
@@ -51,7 +51,10 @@
                 <img src="" alt="clear" class="float-left" id="icon" />
                 <span class="float-left">
                   <strong id="temperature"></strong
-                  ><span class="units"> °C | °F</span>
+                  ><span class="units">
+                    <a href="" id="celsius-link" class="active">°C</a> |
+                    <a href="" id="fahrenheit-link">°F</a>
+                  </span>
                 </span>
               </div>
             </div>
