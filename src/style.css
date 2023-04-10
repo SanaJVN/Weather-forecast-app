@@ -98,4 +98,10 @@ li:first-letter {
 
 .weather-forecast-temperature {
   font-size: 13px;
+  color: #f65282;
+}
+
+.humWin {
+  color: #f65282;
+  font-weight: 150;
 }
